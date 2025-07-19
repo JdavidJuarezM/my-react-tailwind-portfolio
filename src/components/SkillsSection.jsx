@@ -1,52 +1,130 @@
+// src/components/SkillsSection.jsx
+
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import {
+  SiPython,
+  SiNodedotjs,
+  SiCplusplus,
+  SiC,
+  SiDjango,
+  SiExpress,
+  SiFlask,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiAngular,
+  SiMysql,
+  SiGit,
+  SiDocker,
+  SiNpm,
+  SiTensorflow,
+  SiScikitlearn,
+  SiOpencv,
+  SiNumpy,
+  SiPandas,
+} from "react-icons/si";
+// 1. Mueve el ícono de Java aquí
+import { FaAws, FaJava, FaDatabase } from "react-icons/fa";
 
-const skills = [
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "HTML/CSS", level: 95, category: "frontend" },
+const skillsData = {
+  "Core Languages & Frameworks": [
+    // 2. Asegúrate que aquí se use FaJava
+    { name: "Java", icon: <FaJava size={28} className="text-red-500" /> },
+    { name: "Python", icon: <SiPython size={28} className="text-blue-400" /> },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs size={28} className="text-green-500" />,
+    },
+    { name: "C++", icon: <SiCplusplus size={28} className="text-blue-700" /> },
+    { name: "C", icon: <SiC size={28} className="text-gray-500" /> },
+  ],
+  "Frontend Development": [
+    { name: "HTML", icon: <SiHtml5 size={28} className="text-orange-500" /> },
+    { name: "CSS", icon: <SiCss3 size={28} className="text-blue-600" /> },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript size={28} className="text-yellow-400" />,
+    },
+    { name: "React.js", icon: <SiReact size={28} className="text-blue-500" /> },
+    { name: "Angular", icon: <SiAngular size={28} className="text-red-600" /> },
+  ],
+  "Backend Development": [
+    { name: "Django", icon: <SiDjango size={28} className="text-green-800" /> },
+    { name: "Flask", icon: <SiFlask size={28} /> },
+    { name: "Express.js", icon: <SiExpress size={28} /> },
+  ],
+  Databases: [
+    { name: "SQL", icon: <FaDatabase size={28} /> },
+    {
+      name: "MariaDB",
+      icon: <SiMysql size={28} className="text-yellow-700" />,
+    },
+    { name: "MySQL", icon: <SiMysql size={28} className="text-blue-500" /> },
+  ],
+  "AI & Machine Learning": [
+    {
+      name: "TensorFlow/Keras",
+      icon: <SiTensorflow size={28} className="text-orange-600" />,
+    },
+    {
+      name: "Scikit-learn",
+      icon: <SiScikitlearn size={28} className="text-orange-500" />,
+    },
+    { name: "OpenCV", icon: <SiOpencv size={28} /> },
+    { name: "NumPy", icon: <SiNumpy size={28} className="text-blue-500" /> },
+    {
+      name: "Pandas",
+      icon: <SiPandas size={28} className="text-indigo-800" />,
+    },
+  ],
+  "DevOps & Tools": [
+    { name: "Git", icon: <SiGit size={28} className="text-red-600" /> },
+    { name: "Docker", icon: <SiDocker size={28} className="text-blue-500" /> },
+    { name: "npm", icon: <SiNpm size={28} className="text-red-600" /> },
+    { name: "AWS", icon: <FaAws size={28} className="text-orange-500" /> },
+  ],
+  Methodologies: [
+    { name: "Agile", icon: null },
+    { name: "Scrum", icon: null },
+    { name: "Waterfall", icon: null },
+  ],
+};
 
-  { name: "HTML/CSS", level: 95, category: "backend" },
-  { name: "HTML/CSS", level: 95, category: "backend" },
-  { name: "HTML/CSS", level: 95, category: "backend" },
+const categories = ["All", ...Object.keys(skillsData)];
 
-  { name: "HTML/CSS", level: 95, category: "tools" },
-  { name: "HTML/CSS", level: 95, category: "tools" },
-  { name: "HTML/CSS", level: 95, category: "tools" },
-  { name: "HTML/CSS", level: 95, category: "tools" },
-  { name: "HTML/CSS", level: 95, category: "tools" },
-
-  { name: "HTML/CSS", level: 95, category: "AI" },
-  { name: "HTML/CSS", level: 95, category: "AI" },
-];
-
-const categories = ["all", "frontend", "backend", "tools", "AI"];
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredSkills = skills.filter(
-    (skills) => activeCategory === "all" || skills.category === activeCategory
-  );
+  const getFilteredSkills = () => {
+    if (activeCategory === "All") {
+      return Object.values(skillsData).flat();
+    }
+    return skillsData[activeCategory];
+  };
+
+  const filteredSkills = getFilteredSkills();
+
   return (
-    <section id="Skills" className="py-24 px-4 relative bg-secondary/30">
+    <section id="Skills" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           My <span className="text-primary">Skills</span>
         </h2>
 
+        {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
+          {categories.map((category) => (
             <button
-              key={key}
+              key={category}
               onClick={() => setActiveCategory(category)}
               className={cn(
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
-                  ? "bg-primary text-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-card/70 hover:bg-card"
               )}
             >
               {category}
@@ -54,29 +132,28 @@ export const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
-            >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name} </h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Skills Grid */}
+        <motion.div
+          layout
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+        >
+          <AnimatePresence>
+            {filteredSkills.map((skill) => (
+              <motion.div
+                layout
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                className="bg-card/50 p-4 rounded-lg flex items-center gap-4 card-hover"
+              >
+                {skill.icon}
+                <span className="font-medium">{skill.name}</span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
