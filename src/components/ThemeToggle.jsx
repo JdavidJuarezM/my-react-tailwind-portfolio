@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
-  // 1. Cambia el estado inicial a 'true' para que sea oscuro por defecto.
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
