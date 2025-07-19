@@ -1,15 +1,14 @@
+// src/components/ThemeToggle.jsx
+
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export const ThemeToggle = () => {
+export const ThemeToggle = ({ className }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-
-    // 2. La lógica se invierte: si el tema guardado es 'light', lo aplicamos.
-    //    En cualquier otro caso (si es 'dark' o si no hay nada), aplicamos el tema oscuro.
     if (storedTheme === "light") {
       setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
@@ -21,6 +20,7 @@ export const ThemeToggle = () => {
   }, []);
 
   const toggleTheme = () => {
+    // La lógica para cambiar el tema sigue igual
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -33,11 +33,12 @@ export const ThemeToggle = () => {
   };
 
   return (
+    // Se han eliminado las clases de posicionamiento fijo
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outline-none"
+        "p-2 rounded-full transition-colors duration-300 focus:outline-none",
+        className // Permite añadir clases extra desde el componente padre
       )}
     >
       {isDarkMode ? (
