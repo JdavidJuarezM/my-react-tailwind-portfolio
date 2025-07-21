@@ -19,14 +19,12 @@ export const Navbar = () => {
   const firstFocusableRef = useRef(null);
   const lastFocusableRef = useRef(null);
 
-  // Cambia el estilo al hacer scroll
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Bloquea el scroll del body cuando el menú está abierto
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     return () => {
@@ -34,21 +32,18 @@ export const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // Scroll al top al abrir el menú
   useEffect(() => {
     if (isMenuOpen) {
       window.scrollTo({ top: 0, behavior: "instant" });
     }
   }, [isMenuOpen]);
 
-  // Cierra el menú con Escape y focus trap
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setIsMenuOpen(false);
       }
 
-      // Focus trap
       if (e.key === "Tab" && isMenuOpen) {
         const focusableEls = [
           firstFocusableRef.current,

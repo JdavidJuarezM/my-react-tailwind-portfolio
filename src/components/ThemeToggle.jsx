@@ -20,7 +20,6 @@ export const ThemeToggle = ({ className }) => {
   }, []);
 
   const toggleTheme = () => {
-    // La lógica para cambiar el tema sigue igual
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -33,12 +32,11 @@ export const ThemeToggle = ({ className }) => {
   };
 
   return (
-    // Se han eliminado las clases de posicionamiento fijo
     <button
       onClick={toggleTheme}
       className={cn(
         "p-2 rounded-full transition-colors duration-300 focus:outline-none",
-        className // Permite añadir clases extra desde el componente padre
+        className
       )}
     >
       {isDarkMode ? (

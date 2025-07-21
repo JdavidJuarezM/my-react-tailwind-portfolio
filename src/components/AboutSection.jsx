@@ -1,8 +1,4 @@
 import { Briefcase, Code, Cpu } from "lucide-react";
-
-// Estilos para la animación del botón de cometa.
-// --> MODIFICACIÓN: Se ha actualizado para usar las variables CSS de tu tema.
-// Ahora la animación usará tus colores --primary y --background dinámicamente.
 const cometAnimationStyle = `
   @keyframes rotate {
     100% {
@@ -17,7 +13,7 @@ const cometAnimationStyle = `
     padding: 0.5rem 1.5rem; 
   }
 
-  /* El gradiente giratorio que forma el "cometa" */
+
   .comet-button::before {
     content: '';
     position: absolute;
@@ -26,7 +22,7 @@ const cometAnimationStyle = `
     top: -50%;
     width: 200%;
     height: 200%;
-    /* Usa el color primario de tu tema */
+
     background-image: conic-gradient(
       transparent,
       hsl(var(--primary)), 
@@ -35,7 +31,7 @@ const cometAnimationStyle = `
     animation: rotate 4s linear infinite;
   }
 
-  /* La capa que oculta el gradiente y crea el efecto de borde */
+
   .comet-button::after {
     content: '';
     position: absolute;
@@ -44,7 +40,6 @@ const cometAnimationStyle = `
     top: 2px;
     width: calc(100% - 4px);
     height: calc(100% - 4px);
-    /* Usa el color de fondo de tu tema */
     background: hsl(var(--background)); 
     border-radius: 9999px;
   }
@@ -53,7 +48,6 @@ const cometAnimationStyle = `
 export const AboutSection = () => {
   return (
     <section id="About" className="py-24 px-4 relative">
-      {/* Se inyectan los estilos de la animación en el componente */}
       <style>{cometAnimationStyle}</style>
 
       <div className="container mx-auto max-w-5xl">
@@ -61,7 +55,6 @@ export const AboutSection = () => {
           About <span className="text-primary">Me</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* --- COLUMNA IZQUIERDA: TU HISTORIA --- */}
           <div className="space-y-6 text-left">
             <h3 className="text-2xl font-semibold">
               AI Engineer & Full-Stack Developer
@@ -96,7 +89,6 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          {/* --- COLUMNA DERECHA: TUS ESPECIALIDADES --- */}
           <div className="grid grid-cols-1 gap-6">
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">

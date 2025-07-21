@@ -25,11 +25,11 @@ export const StarBackground = () => {
     for (let i = 0; i < numberOfStars; i++) {
       newStars.push({
         id: i,
-        size: Math.random() * 2 + 1, // Estrellas un poco más pequeñas
+        size: Math.random() * 2 + 1,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        // --> MODIFICACIÓN: Opacidad más sutil para un look más realista
-        opacity: Math.random() * 0.4 + 0.2, // Rango de 0.2 a 0.6
+
+        opacity: Math.random() * 0.4 + 0.2,
         animationDuration: Math.random() * 4 + 2,
       });
     }
@@ -65,8 +65,8 @@ export const StarBackground = () => {
             top: star.y + "%",
             opacity: star.opacity,
             animationDuration: star.animationDuration + "s",
-            // --> MODIFICACIÓN: Color y brillo cambiados a azul galaxia
-            backgroundColor: "#93c5fd", // Tailwind blue-400
+
+            backgroundColor: "#93c5fd",
             boxShadow: "0 0 8px 1px rgba(147, 197, 253, 0.4)",
           }}
         />
@@ -83,7 +83,7 @@ export const StarBackground = () => {
             top: meteor.y + "%",
             animationDelay: meteor.delay + "s",
             animationDuration: meteor.animationDuration + "s",
-            // --> MODIFICACIÓN: Gradiente y brillo del meteoro cambiados a azul
+
             backgroundImage: "linear-gradient(to right, #93c5fd, transparent)",
             boxShadow: "0 0 10px 2px rgba(147, 197, 253, 0.3)",
           }}

@@ -26,12 +26,11 @@ import {
   SiNumpy,
   SiPandas,
 } from "react-icons/si";
-// 1. Mueve el ícono de Java aquí
+
 import { FaAws, FaJava, FaDatabase } from "react-icons/fa";
 
 const skillsData = {
   "Core Languages & Frameworks": [
-    // 2. Asegúrate que aquí se use FaJava
     { name: "Java", icon: <FaJava size={28} className="text-red-500" /> },
     { name: "Python", icon: <SiPython size={28} className="text-blue-400" /> },
     {
