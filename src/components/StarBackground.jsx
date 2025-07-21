@@ -21,28 +21,24 @@ export const StarBackground = () => {
     const numberOfStars = Math.floor(
       (window.innerWidth * window.innerHeight) / 1000
     );
-
     const newStars = [];
-
     for (let i = 0; i < numberOfStars; i++) {
       newStars.push({
         id: i,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 2 + 1, // Estrellas un poco más pequeñas
         x: Math.random() * 100,
         y: Math.random() * 100,
-        opacity: Math.random() * 0.5 + 0.5,
+        // --> MODIFICACIÓN: Opacidad más sutil para un look más realista
+        opacity: Math.random() * 0.4 + 0.2, // Rango de 0.2 a 0.6
         animationDuration: Math.random() * 4 + 2,
       });
     }
-
     setStars(newStars);
   };
 
   const generateMeteors = () => {
     const numberOfMeteors = 4;
-
     const newMeteors = [];
-
     for (let i = 0; i < numberOfMeteors; i++) {
       newMeteors.push({
         id: i,
@@ -53,7 +49,6 @@ export const StarBackground = () => {
         animationDuration: Math.random() * 3 + 2,
       });
     }
-
     setMeteors(newMeteors);
   };
 
@@ -62,7 +57,7 @@ export const StarBackground = () => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className="star animate-pulse-subtle"
+          className="absolute rounded-full animate-pulse-subtle"
           style={{
             width: star.size + "px",
             height: star.size + "px",
@@ -70,6 +65,9 @@ export const StarBackground = () => {
             top: star.y + "%",
             opacity: star.opacity,
             animationDuration: star.animationDuration + "s",
+            // --> MODIFICACIÓN: Color y brillo cambiados a azul galaxia
+            backgroundColor: "#93c5fd", // Tailwind blue-400
+            boxShadow: "0 0 8px 1px rgba(147, 197, 253, 0.4)",
           }}
         />
       ))}
@@ -77,14 +75,17 @@ export const StarBackground = () => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className="meteor animate-meteor"
+          className="absolute rounded-full animate-meteor"
           style={{
             width: meteor.size * 50 + "px",
             height: meteor.size * 2 + "px",
             left: meteor.x + "%",
             top: meteor.y + "%",
-            animationDelay: meteor.delay,
+            animationDelay: meteor.delay + "s",
             animationDuration: meteor.animationDuration + "s",
+            // --> MODIFICACIÓN: Gradiente y brillo del meteoro cambiados a azul
+            backgroundImage: "linear-gradient(to right, #93c5fd, transparent)",
+            boxShadow: "0 0 10px 2px rgba(147, 197, 253, 0.3)",
           }}
         />
       ))}

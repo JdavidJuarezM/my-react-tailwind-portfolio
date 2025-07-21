@@ -6,9 +6,19 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-4"
     >
-      <div className="container max-w-4xl mx-auto text-center z-10">
+      {/* MODIFICACIÓN 1: Se añadieron clases a este 'div' para crear el panel.
+        - bg-black/50: Fondo negro con 50% de opacidad.
+        - backdrop-blur-sm: Aplica un ligero desenfoque al fondo detrás del panel.
+        - rounded-xl: Bordes redondeados para un look más suave.
+        - p-8: Padding (relleno) para que el texto no toque los bordes del panel.
+      */}
+      <div>
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          {/* MODIFICACIÓN 2: Se agrandó el tamaño de la fuente del título.
+            - Antes: text-4xl md:text-6xl
+            - Ahora: text-5xl md:text-7xl
+          */}
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in">Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
@@ -20,14 +30,17 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            A Computer Systems Engineering student specializing in Applied AI
-            with hands-on experience across the full software development
-            lifecycle. Proficient in Python, Java, and Node.js, and eager to
-            apply analytical and problem-solving skills to build innovative.
+          {/* MODIFICACIÓN 3: Se agrandó el tamaño de la fuente del párrafo.
+            - Antes: text-lg md:text-xl
+            - Ahora: text-xl md:text-2xl
+          */}
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3 container max-w-4xl mx-auto text-center z-10 bg-black/50 backdrop-blur-sm rounded-xl p-8">
+            Transforming complex problems into intelligent software solutions.
+            I'm a Computer Systems Engineer specializing in Applied AI and
+            full-stack development.
           </p>
           <div className="opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
+            <a href="#Projects" className="cosmic-button">
               View My Work
             </a>
           </div>

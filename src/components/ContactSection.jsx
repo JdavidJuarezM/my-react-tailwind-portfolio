@@ -1,6 +1,8 @@
 import {
+  GithubIcon,
   InstagramIcon,
   Linkedin,
+  LinkedinIcon,
   Mail,
   MapPin,
   Phone,
@@ -37,8 +39,8 @@ export const ContactSection = () => {
           Get in <span className="text-primary">Touch</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maxime
-          facere asperiores deleniti
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your vision. Feel free to reach out.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -56,10 +58,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <a
-                    href="mailto:wjfjfv@gmail.com"
+                    href="mailto:josedavidmagana@hotmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    wjfjfv@gmail.com
+                    josedavidmagana@hotmail.com
                   </a>
                 </div>
               </div>
@@ -72,11 +74,9 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">phone</h4>
                   <a
-                    href="tel:+52 33525684580"
+                    href="tel:"
                     className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +52 33525684580
-                  </a>
+                  ></a>
                 </div>
               </div>
 
@@ -87,10 +87,7 @@ export const ContactSection = () => {
 
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <a
-                    href="mailto:wjfjfv@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
+                  <a className="text-muted-foreground hover:text-primary transition-colors">
                     Jalisco.Mexico
                   </a>
                 </div>
@@ -100,11 +97,14 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
+                <a
+                  href="https://www.linkedin.com/in/david-juarez-maga%C3%B1a-7b0bb02b6/"
+                  target="_blank"
+                >
+                  <LinkedinIcon />
                 </a>
-                <a href="#" target="_blank">
-                  <YoutubeIcon />
+                <a href="https://github.com/JdavidJuarezM" target="_blank">
+                  <GithubIcon />
                 </a>
                 <a href="#" target="_blank">
                   <InstagramIcon />
