@@ -81,7 +81,7 @@ export const StarBackground = () => {
             height: meteor.size * 2 + "px",
             left: meteor.x + "%",
             top: meteor.y + "%",
-            animationDelay: meteor.delay + "s",
+            animationDelay: meteor.delay,
             animationDuration: meteor.animationDuration + "s",
 
             backgroundImage: "linear-gradient(to right, #93c5fd, transparent)",
