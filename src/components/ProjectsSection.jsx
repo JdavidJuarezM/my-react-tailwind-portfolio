@@ -3,13 +3,14 @@ import { ArrowRight, ExternalLink, Github, GithubIcon } from "lucide-react";
 
 const Projects = [
   {
-    id: 1,
-    title: "Lorem ipsum",
-    description: "Lorem ipsum dolor sit amet consectetur adi",
-    image: "/projects/project1.png",
-    tags: ["React", "CSS", "HTML"],
-    demoUrl: "#",
-    githubUrl: "#",
+    id: 1, // Or the next available number
+    title: "Digital Education Lab",
+    description:
+      "An interactive web platform designed to teach to elementary students through Game modules like the 'Virtual Orchard'.",
+    image: "/projects/proyecto1.png",
+    tags: ["React", "Node.js", "MongoDB", "Express", "Vercel"],
+    demoUrl: "https://laboratorio-digital-frond.vercel.app",
+    githubUrl: "https://github.com/JdavidJuarezM/laboratorio-digital",
   },
   {
     id: 2,
@@ -40,8 +41,9 @@ export const ProjectsSection = () => {
           Featured <span className="text-primary">Projects </span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          cupiditate
+          Check out some of my recent projects that showcase my skills and
+          creativity. Each project is a piece to my dedication to building web
+          applications!
         </p>
 
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -84,7 +86,7 @@ export const ProjectsSection = () => {
                       <ExternalLink size={20} />
                     </a>
                     <a
-                      href={project.demoUrl}
+                      href={project.githubUrl}
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >

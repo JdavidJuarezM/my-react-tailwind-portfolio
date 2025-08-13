@@ -25,20 +25,29 @@ import {
   SiOpencv,
   SiNumpy,
   SiPandas,
+  SiMongodb,
+  SiCashapp,
+  SiTailwindcss,
+  SiScrumalliance,
 } from "react-icons/si";
 
 import { FaAws, FaJava, FaDatabase } from "react-icons/fa";
+import { DiDotnet } from "react-icons/di";
 
 const skillsData = {
   "Core Languages & Frameworks": [
     { name: "Java", icon: <FaJava size={28} className="text-red-500" /> },
-    { name: "Python", icon: <SiPython size={28} className="text-blue-400" /> },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb size={28} className="text-green-600" />,
+    },
+    { name: "Express.js", icon: <SiExpress size={28} /> },
+    { name: "React.js", icon: <SiReact size={28} className="text-blue-500" /> },
     {
       name: "Node.js",
       icon: <SiNodedotjs size={28} className="text-green-500" />,
     },
-    { name: "C++", icon: <SiCplusplus size={28} className="text-blue-700" /> },
-    { name: "C", icon: <SiC size={28} className="text-gray-500" /> },
+    { name: "C#", icon: <DiDotnet size={28} className="text-blue-700" /> },
   ],
   "Frontend Development": [
     { name: "HTML", icon: <SiHtml5 size={28} className="text-orange-500" /> },
@@ -48,18 +57,19 @@ const skillsData = {
       icon: <SiJavascript size={28} className="text-yellow-400" />,
     },
     { name: "React.js", icon: <SiReact size={28} className="text-blue-500" /> },
-    { name: "Angular", icon: <SiAngular size={28} className="text-red-600" /> },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss size={28} className="text-teal-400" />,
+    },
   ],
   "Backend Development": [
-    { name: "Django", icon: <SiDjango size={28} className="text-green-800" /> },
-    { name: "Flask", icon: <SiFlask size={28} /> },
     { name: "Express.js", icon: <SiExpress size={28} /> },
+    { name: ".Net", icon: <DiDotnet size={28} className="text-blue-700" /> },
   ],
   Databases: [
-    { name: "SQL", icon: <FaDatabase size={28} /> },
     {
-      name: "MariaDB",
-      icon: <SiMysql size={28} className="text-yellow-700" />,
+      name: "SQL Server",
+      icon: <FaDatabase size={28} className="text-blue-700" />,
     },
     { name: "MySQL", icon: <SiMysql size={28} className="text-blue-500" /> },
   ],
@@ -88,7 +98,6 @@ const skillsData = {
   Methodologies: [
     { name: "Agile", icon: null },
     { name: "Scrum", icon: null },
-    { name: "Waterfall", icon: null },
   ],
 };
 
