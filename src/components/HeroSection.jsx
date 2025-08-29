@@ -21,9 +21,9 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3 container max-w-4xl mx-auto text-center z-10 bg-black/50 backdrop-blur-sm rounded-xl p-8">
-            Transforming complex problems into intelligent software solutions.
-            I'm a Computer Systems Engineer specializing in Applied AI and
-            full-stack development.
+            Computer Systems engineer with hands-on experience architecting and
+            developing scalable, cloud-native applications using Node.js, .NET,
+            and the MERN stack.
           </p>
           <div className="opacity-0 animate-fade-in-delay-4">
             <a href="#Projects" className="cosmic-button">

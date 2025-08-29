@@ -61,17 +61,15 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              I am a Computer Systems Engineering student with a strong
-              specialization in Applied Artificial Intelligence. My experience
-              and hands-on projects have given me a practical understanding of
-              the entire software development lifecycle.
+              I am a Computer Systems Engineer with a strong specialization in
+              Applied Artificial Intelligence. My experience and hands-on
+              projects have given me a practical understanding of the entire
+              software development lifecycle.
             </p>
             <p className="text-muted-foreground">
-              Driven by a passion for creative problem-solving, I enjoy building
-              innovative and efficient solutions. I am proficient in backend
-              technologies like Python, Java, and Node.js, and I thrive in
-              collaborative, agile environments where I can continuously learn
-              and adapt to new challenges.
+              Proficient in microservices principles, secure API design, and
+              deploying to AWS. Committed to delivering high-quality, performant
+              software solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -79,7 +77,7 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href="/My_Resume_David.pdf"
+                href="/DavidJuarez_DotNet_Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="comet-button text-primary hover:text-white transition-colors duration-300 text-center rounded-full"
@@ -121,7 +119,7 @@ export const AboutSection = () => {
                     I lead the end-to-end development of dynamic web platforms.
                     I engineer interactive front-ends with React.js and build
                     robust backends using Node.js and Express.js connected to
-                    MySQL databases.
+                    SQL Server and MongoDB databases.
                   </p>
                 </div>
               </div>
@@ -138,8 +136,8 @@ export const AboutSection = () => {
                   <p className="text-muted-foreground">
                     I specialize in designing and implementing RESTful APIs to
                     efficiently manage user data, sessions, and application
-                    logic. Proficient in Python frameworks like Django and
-                    Flask, and database management with SQL.
+                    logic. Proficient in .NET (ASP.NET Core, EF Core), and
+                    database management with SQL Server, MongoDB, and MySQL.
                   </p>
                 </div>
               </div>

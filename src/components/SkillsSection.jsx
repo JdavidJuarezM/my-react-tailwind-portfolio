@@ -35,69 +35,72 @@ import { FaAws, FaJava, FaDatabase } from "react-icons/fa";
 import { DiDotnet } from "react-icons/di";
 
 const skillsData = {
-  "Core Languages & Frameworks": [
-    { name: "Java", icon: <FaJava size={28} className="text-red-500" /> },
-    {
-      name: "MongoDB",
-      icon: <SiMongodb size={28} className="text-green-600" />,
-    },
-    { name: "Express.js", icon: <SiExpress size={28} /> },
-    { name: "React.js", icon: <SiReact size={28} className="text-blue-500" /> },
-    {
-      name: "Node.js",
-      icon: <SiNodedotjs size={28} className="text-green-500" />,
-    },
+  Languages: [
     { name: "C#", icon: <DiDotnet size={28} className="text-blue-700" /> },
-  ],
-  "Frontend Development": [
-    { name: "HTML", icon: <SiHtml5 size={28} className="text-orange-500" /> },
-    { name: "CSS", icon: <SiCss3 size={28} className="text-blue-600" /> },
     {
       name: "JavaScript",
       icon: <SiJavascript size={28} className="text-yellow-400" />,
     },
-    { name: "React.js", icon: <SiReact size={28} className="text-blue-500" /> },
+    { name: "Python", icon: <SiPython size={28} className="text-blue-500" /> },
+    { name: "Java", icon: <FaJava size={28} className="text-red-500" /> },
+  ],
+  "Frontend Development": [
+    { name: "React", icon: <SiReact size={28} className="text-blue-500" /> },
+    { name: "HTML5", icon: <SiHtml5 size={28} className="text-orange-500" /> },
+    { name: "CSS3", icon: <SiCss3 size={28} className="text-blue-600" /> },
     {
       name: "Tailwind CSS",
       icon: <SiTailwindcss size={28} className="text-teal-400" />,
     },
   ],
   "Backend Development": [
-    { name: "Express.js", icon: <SiExpress size={28} /> },
-    { name: ".Net", icon: <DiDotnet size={28} className="text-blue-700" /> },
+    {
+      name: ".NET (ASP.NET Core, EF Core)",
+      icon: <DiDotnet size={28} className="text-blue-700" />,
+    },
+    {
+      name: "Node.js (Express.js)",
+      icon: <SiNodedotjs size={28} className="text-green-500" />,
+    },
   ],
   Databases: [
     {
       name: "SQL Server",
       icon: <FaDatabase size={28} className="text-blue-700" />,
     },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb size={28} className="text-green-600" />,
+    },
     { name: "MySQL", icon: <SiMysql size={28} className="text-blue-500" /> },
   ],
   "AI & Machine Learning": [
     {
-      name: "TensorFlow/Keras",
+      name: "TensorFlow",
       icon: <SiTensorflow size={28} className="text-orange-600" />,
     },
+    {
+      name: "Keras",
+      icon: <SiTensorflow size={28} className="text-orange-600" />,
+    },
+    { name: "OpenCV", icon: <SiOpencv size={28} /> },
     {
       name: "Scikit-learn",
       icon: <SiScikitlearn size={28} className="text-orange-500" />,
     },
-    { name: "OpenCV", icon: <SiOpencv size={28} /> },
-    { name: "NumPy", icon: <SiNumpy size={28} className="text-blue-500" /> },
     {
       name: "Pandas",
       icon: <SiPandas size={28} className="text-indigo-800" />,
     },
   ],
-  "DevOps & Tools": [
-    { name: "Git", icon: <SiGit size={28} className="text-red-600" /> },
+  "DevOps & Cloud": [
     { name: "Docker", icon: <SiDocker size={28} className="text-blue-500" /> },
-    { name: "npm", icon: <SiNpm size={28} className="text-red-600" /> },
-    { name: "AWS", icon: <FaAws size={28} className="text-orange-500" /> },
-  ],
-  Methodologies: [
-    { name: "Agile", icon: null },
-    { name: "Scrum", icon: null },
+    {
+      name: "AWS (ECS, RDS)",
+      icon: <FaAws size={28} className="text-orange-500" />,
+    },
+    { name: "Git", icon: <SiGit size={28} className="text-red-600" /> },
+    { name: "Agile/Scrum", icon: null },
   ],
 };
 
