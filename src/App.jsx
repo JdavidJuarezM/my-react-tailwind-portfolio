@@ -10,11 +10,11 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <Routes>
+          <SpeedInsights />
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <SpeedInsights />
     </>
   );
 }
