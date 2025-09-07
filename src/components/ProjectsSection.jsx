@@ -3,10 +3,10 @@ import { ArrowRight, ExternalLink, GithubIcon } from "lucide-react";
 const Projects = [
   {
     id: 1,
-    title: "Psyche-Scheduler - Full-Stack Therapy Management Platform",
+    title: "Psy-Scheduler - Full-Stack Therapy Management Platform",
     description:
       "A comprehensive, full-stack scheduling application for mental health professionals, featuring distinct role-based interfaces for psychologists and patients.",
-    image: "/projects/project1.png", // Asignando una imagen genérica
+    image: "/src/assets/proyecto3.png",
     tags: [".NET Core", "React", "SQL Server", "Docker", "AWS"],
     demoUrl: "#",
     githubUrl: "https://github.com/JdavidJuarezM/Psyche-Scheduler",
@@ -16,7 +16,7 @@ const Projects = [
     title: "Digital Creative Lab - MERN Stack E-Learning Platform",
     description:
       "A full-stack e-learning platform featuring interactive courses and user progress tracking.",
-    image: "/projects/proyecto1.png", // Usando la imagen específica del proyecto
+    image: "/src/assets/huerto.png", // Usando la imagen específica del proyecto
     tags: ["MongoDB", "Express.js", "React", "Node.js"],
     demoUrl: "https://laboratorio-digital-frond.vercel.app",
     githubUrl: "https://github.com/JdavidJuarezM/laboratorio-digital",
@@ -26,10 +26,10 @@ const Projects = [
     title: "AI-Powered Signs Detection",
     description:
       "A real-time signs detection system from live webcam video streams.",
-    image: "/projects/project2.png", // Asignando una imagen genérica
+    image: "/src/assets/proyectosenias.png", // Asignando una imagen genérica
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "Node.js", "React"],
-    demoUrl: "#",
-    githubUrl: "#", // URL de GitHub no disponible
+    demoUrl: "https://cnn-detector-de-senias-frontend.vercel.app",
+    githubUrl: "https://github.com/JdavidJuarezM/Proyecto-detector-de-senias", // URL de GitHub
   },
   {
     id: 4,

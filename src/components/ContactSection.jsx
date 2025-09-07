@@ -13,6 +13,11 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -23,13 +28,30 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. i'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    // Llama a la función de EmailJS para enviar el formulario
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
+      (result) => {
+        // En caso de éxito
+        console.log("Mensaje enviado con éxito!", result.text);
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setIsSubmitting(false);
+        e.target.reset(); // Limpia los campos del formulario
+      },
+      (error) => {
+        // En caso de error
+        console.error("Error al enviar el mensaje:", error.text);
+        toast({
+          title: "Error!",
+          description:
+            "There was an error sending your message. Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+      }
+    );
   };
 
   return (
@@ -100,16 +122,21 @@ export const ContactSection = () => {
                 <a
                   href="https://www.linkedin.com/in/david-juarez-maga%C3%B1a-7b0bb02b6/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <LinkedinIcon />
                 </a>
-                <a href="https://github.com/JdavidJuarezM" target="_blank">
+                <a
+                  href="https://github.com/JdavidJuarezM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <GithubIcon />
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <InstagramIcon />
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <TicketCheckIcon />
                 </a>
               </div>
@@ -131,7 +158,7 @@ export const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="from_name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Your Full Name Here..."
@@ -149,7 +176,7 @@ export const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="from_email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="AnExample@gmail.com"
