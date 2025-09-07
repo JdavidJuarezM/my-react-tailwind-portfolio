@@ -6,7 +6,7 @@ const Projects = [
     title: "Psy-Scheduler - Full-Stack Therapy Management Platform",
     description:
       "A comprehensive, full-stack scheduling application for mental health professionals, featuring distinct role-based interfaces for psychologists and patients.",
-    image: "/src/assets/proyecto3.png",
+    image: "/projects/proyecto3.png",
     tags: [".NET Core", "React", "SQL Server", "Docker", "AWS"],
     demoUrl: "#",
     githubUrl: "https://github.com/JdavidJuarezM/Psyche-Scheduler",
@@ -16,7 +16,7 @@ const Projects = [
     title: "Digital Creative Lab - MERN Stack E-Learning Platform",
     description:
       "A full-stack e-learning platform featuring interactive courses and user progress tracking.",
-    image: "/src/assets/huerto.png", // Usando la imagen específica del proyecto
+    image: "/projects/huerto.png", // Usando la imagen específica del proyecto
     tags: ["MongoDB", "Express.js", "React", "Node.js"],
     demoUrl: "https://laboratorio-digital-frond.vercel.app",
     githubUrl: "https://github.com/JdavidJuarezM/laboratorio-digital",
@@ -26,7 +26,7 @@ const Projects = [
     title: "AI-Powered Signs Detection",
     description:
       "A real-time signs detection system from live webcam video streams.",
-    image: "/src/assets/proyectosenias.png", // Asignando una imagen genérica
+    image: "/projects/proyectosenias.png", // Asignando una imagen genérica
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "Node.js", "React"],
     demoUrl: "https://cnn-detector-de-senias-frontend.vercel.app",
     githubUrl: "https://github.com/JdavidJuarezM/Proyecto-detector-de-senias", // URL de GitHub
