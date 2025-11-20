@@ -13,7 +13,6 @@ const cometAnimationStyle = `
     padding: 0.5rem 1.5rem; 
   }
 
-
   .comet-button::before {
     content: '';
     position: absolute;
@@ -22,7 +21,6 @@ const cometAnimationStyle = `
     top: -50%;
     width: 200%;
     height: 200%;
-
     background-image: conic-gradient(
       transparent,
       hsl(var(--primary)), 
@@ -30,7 +28,6 @@ const cometAnimationStyle = `
     );
     animation: rotate 4s linear infinite;
   }
-
 
   .comet-button::after {
     content: '';
@@ -57,27 +54,25 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-left">
             <h3 className="text-2xl font-semibold">
-              AI Engineer & Full-Stack Developer
+              Java Backend Developer & Full-Stack Engineer
             </h3>
 
             <p className="text-muted-foreground">
-              I am a Computer Systems Engineer with a strong specialization in
-              Applied Artificial Intelligence. My experience and hands-on
-              projects have given me a practical understanding of the entire
-              software development lifecycle.
+              I am a Computer Systems Engineer with expertise in <strong>Full Stack Java development</strong>.
+              Experienced in migrating legacy systems to modern architectures using <strong>Spring Boot 3</strong> and React.
             </p>
             <p className="text-muted-foreground">
-              Proficient in microservices principles, secure API design, and
-              deploying to AWS. Committed to delivering high-quality, performant
-              software solutions.
+              Proficient in cloud-native practices (Docker), secure API design (JWT, OAuth2), and integrating cutting-edge technologies
+              like OpenAI models into enterprise applications. Committed to delivering secure, efficient, and user-centric software solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a href="#Contact" className="cosmic-button text-center">
                 Get In Touch
               </a>
+              {/* Asegúrate de subir tu nuevo CV con este nombre a la carpeta public */}
               <a
-                href="/DavidJuarez_DotNet_Developer.pdf"
+                href="/David_Juarez_Java_Backend_portfolio.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="comet-button text-primary hover:text-white transition-colors duration-300 text-center rounded-full"
@@ -95,13 +90,11 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">
-                    AI & Machine Learning
+                    Backend & ApiRest
                   </h4>
                   <p className="text-muted-foreground">
-                    I develop intelligent, real-time detection systems and
-                    scalable AI solutions using Python, TensorFlow, and OpenCV.
-                    My focus is on creating high-accuracy models for complex
-                    gesture classification and data pipelines.
+                    I specialize in building secure, high-performance microservices using <strong>Spring Boot 3</strong>.
+                    Skilled in designing RESTful APIs and managing relational databases with MySQL and JPA/Hibernate.
                   </p>
                 </div>
               </div>
@@ -113,13 +106,11 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">
-                    Full-Stack Development
+                    Full-Stack & AI Integration
                   </h4>
                   <p className="text-muted-foreground">
-                    I lead the end-to-end development of dynamic web platforms.
-                    I engineer interactive front-ends with React.js and build
-                    robust backends using Node.js and Express.js connected to
-                    SQL Server and MongoDB databases.
+                    I integrate robust Java backends with modern frontends using <strong>React 19</strong> and Tailwind CSS.
+                    Experienced in implementing Generative AI solutions using <strong>Spring AI</strong>.
                   </p>
                 </div>
               </div>
@@ -131,13 +122,11 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">
-                    Backend & API Design
+                    DevOps & Cloud
                   </h4>
                   <p className="text-muted-foreground">
-                    I specialize in designing and implementing RESTful APIs to
-                    efficiently manage user data, sessions, and application
-                    logic. Proficient in .NET (ASP.NET Core, EF Core), and
-                    database management with SQL Server, MongoDB, and MySQL.
+                    Adept at orchestrating development workflows with <strong>Docker</strong> and Docker Compose.
+                    Experience with Git version control, CI/CD pipelines (Github Actions), and cloud deployments.
                   </p>
                 </div>
               </div>

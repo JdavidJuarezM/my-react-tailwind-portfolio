@@ -1,14 +1,9 @@
 import {
   GithubIcon,
-  InstagramIcon,
-  Linkedin,
   LinkedinIcon,
   Mail,
   MapPin,
-  Phone,
   Send,
-  TicketCheckIcon,
-  YoutubeIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -25,28 +20,24 @@ export const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    // Llama a la función de EmailJS para enviar el formulario
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
       (result) => {
-        // En caso de éxito
         console.log("Mensaje enviado con éxito!", result.text);
         toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
+          title: "Message sent successfully! 🚀",
+          description: "Thanks for reaching out. I'll get back to you as soon as possible.",
+          variant: "default", // O usa un color personalizado si tienes configurado
         });
         setIsSubmitting(false);
-        e.target.reset(); // Limpia los campos del formulario
+        e.target.reset();
       },
       (error) => {
-        // En caso de error
         console.error("Error al enviar el mensaje:", error.text);
         toast({
-          title: "Error!",
-          description:
-            "There was an error sending your message. Please try again.",
+          title: "Oops! Something went wrong.",
+          description: "Could not send your message. Please try again later or email me directly.",
           variant: "destructive",
         });
         setIsSubmitting(false);
@@ -61,98 +52,76 @@ export const ContactSection = () => {
           Get in <span className="text-primary">Touch</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision. Feel free to reach out.
+          I am currently open to new opportunities as a <strong>Java Backend Developer</strong>.
+          Whether you have a question, a project idea, or just want to say hi, feel free to drop a message!
         </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left Column: Contact Info */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
-              {" "}
-              Contact Information
-            </h3>
+            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
 
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />{" "}
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4 p-4 rounded-lg bg-background/50 hover:bg-background transition-colors border border-transparent hover:border-primary/20">
+                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                  <Mail className="h-6 w-6" />
                 </div>
-
                 <div>
-                  <h4 className="font-medium">Email</h4>
+                  <h4 className="font-medium text-lg">Email</h4>
                   <a
                     href="mailto:josedavidmagana@hotmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors break-all"
                   >
                     josedavidmagana@hotmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />{" "}
+              <div className="flex items-start space-x-4 p-4 rounded-lg bg-background/50 hover:bg-background transition-colors border border-transparent hover:border-primary/20">
+                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                  <MapPin className="h-6 w-6" />
                 </div>
-
                 <div>
-                  <h4 className="font-medium">phone</h4>
-                  <a
-                    href="tel:"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  ></a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />{" "}
-                </div>
-
-                <div>
-                  <h4 className="font-medium">Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Jalisco.Mexico
-                  </a>
+                  <h4 className="font-medium text-lg">Location</h4>
+                  <p className="text-muted-foreground">
+                    Jalisco, Mexico
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              <h4 className="font-medium mb-4 text-lg">Connect With Me</h4>
+              <div className="flex space-x-4">
                 <a
                   href="https://www.linkedin.com/in/david-juarez-maga%C3%B1a-7b0bb02b6/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-background border border-input hover:border-primary hover:text-primary transition-all hover:-translate-y-1 shadow-sm"
+                  aria-label="LinkedIn"
                 >
-                  <LinkedinIcon />
+                  <LinkedinIcon size={24} />
                 </a>
                 <a
                   href="https://github.com/JdavidJuarezM"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-background border border-input hover:border-primary hover:text-primary transition-all hover:-translate-y-1 shadow-sm"
+                  aria-label="GitHub"
                 >
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <InstagramIcon />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <TicketCheckIcon />
+                  <GithubIcon size={24} />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs">
+          {/* Right Column: Contact Form */}
+          <div className="bg-card p-8 rounded-xl shadow-sm border border-border/50">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground/80">
                   Your Name
                 </label>
                 <input
@@ -160,17 +129,13 @@ export const ContactSection = () => {
                   id="name"
                   name="from_name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Your Full Name Here..."
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/50"
+                  placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground/80">
                   Your Email
                 </label>
                 <input
@@ -178,37 +143,36 @@ export const ContactSection = () => {
                   id="email"
                   name="from_email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="AnExample@gmail.com"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/50"
+                  placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground/80">
                   Your Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello I'd like to talk about..."
+                  rows="4"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/50 resize-none"
+                  placeholder="Hi David, I'd like to discuss a job opportunity..."
                 />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={cn(
-                    "cosmic-button w-full flex items-center justify-center gap-2"
-                  )}
-                >
-                  {isSubmitting ? "Sending...🚀" : "Send Message"}
-                  <Send size={16} />
-                </button>
               </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={cn(
+                  "cosmic-button w-full flex items-center justify-center gap-2 font-semibold py-3 rounded-lg mt-2",
+                  isSubmitting && "opacity-70 cursor-not-allowed"
+                )}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+                <Send size={18} className={isSubmitting ? "animate-pulse" : ""} />
+              </button>
             </form>
           </div>
         </div>

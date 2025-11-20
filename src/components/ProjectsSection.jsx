@@ -3,43 +3,43 @@ import { ArrowRight, ExternalLink, GithubIcon } from "lucide-react";
 const Projects = [
   {
     id: 1,
-    title: "Psy-Scheduler - Full-Stack Therapy Management Platform",
+    title: "Psyche-Scheduler - Virtual Psychology Clinic",
     description:
-      "A comprehensive, full-stack scheduling application for mental health professionals, featuring distinct role-based interfaces for psychologists and patients.",
-    image: "/projects/proyecto3.png",
-    tags: [".NET Core", "React", "SQL Server", "Docker", "AWS"],
+      "A full-stack telemedicine platform enabling patients to schedule consultations. Features secure JWT authentication and Role-Based Access Control (RBAC).",
+    image: "/projects/proyecto3.png", // Reusa la imagen o pon una nueva
+    tags: ["Java 21", "Spring Boot 3", "React", "MySQL", "Docker"],
     demoUrl: "#",
     githubUrl: "https://github.com/JdavidJuarezM/Psyche-Scheduler",
   },
   {
     id: 2,
-    title: "Digital Creative Lab - MERN Stack E-Learning Platform",
+    title: "Digital Creative Lab - Gamified Platform",
     description:
-      "A full-stack e-learning platform featuring interactive courses and user progress tracking.",
-    image: "/projects/huerto.png", // Usando la imagen específica del proyecto
-    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+      "Comprehensive educational platform migrated to a robust Java architecture. Manages user progress and game states with Spring Data JPA.",
+    image: "/projects/huerto.png",
+    tags: ["Java 21", "Spring Boot 3", "React", "MySQL", "Framer Motion"],
     demoUrl: "https://laboratorio-digital-frond.vercel.app",
     githubUrl: "https://github.com/JdavidJuarezM/laboratorio-digital",
   },
   {
     id: 3,
-    title: "AI-Powered Signs Detection",
+    title: "SprintAI - GenAI Content Platform",
     description:
-      "A real-time signs detection system from live webcam video streams.",
-    image: "/projects/proyectosenias.png", // Asignando una imagen genérica
-    tags: ["Python", "TensorFlow", "Keras", "OpenCV", "Node.js", "React"],
-    demoUrl: "https://cnn-detector-de-senias-frontend.vercel.app",
-    githubUrl: "https://github.com/JdavidJuarezM/Proyecto-detector-de-senias", // URL de GitHub
+      "Generative AI platform integrating OpenAI’s GPT-3.5 and DALL-E 2 via Spring AI. Features a 'Recipe Creator' and image generation.",
+    image: "/projects/proyecto1.png", // Usa una imagen apropiada
+    tags: ["Java 17", "Spring Boot 3", "Spring AI", "React", "OpenAI"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/JdavidJuarezM/SprintAIapp",
   },
   {
     id: 4,
-    title: "Finance Tracker App",
+    title: "CLI Strategy Game Engine",
     description:
-      "A web application for personal expense tracking using ASP.NET Core MVC and a code-first database approach.",
-    image: "/projects/project3.png", // Asignando una imagen genérica
-    tags: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server"],
+      "Interactive console-based simulation of 'Snakes and Ladders'. Implements custom Binary Search Trees and QuickSort algorithms from scratch.",
+    image: "/projects/project2.png", // O una imagen de código/terminal
+    tags: ["Java SE", "Data Structures", "Algorithms", "Git"],
     demoUrl: "#",
-    githubUrl: "#", // URL de GitHub no disponible
+    githubUrl: "https://github.com/JdavidJuarezM/serpientes-y-escaleras-java",
   },
 ];
 
@@ -51,9 +51,7 @@ export const ProjectsSection = () => {
           Featured <span className="text-primary">Projects</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Check out some of my recent projects that showcase my skills and
-          creativity. Each project is a piece to my dedication to building web
-          applications!
+          Check out my recent projects showcasing <strong>Java Backend Architecture</strong> and Full Stack development.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -62,11 +60,11 @@ export const ProjectsSection = () => {
               key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div>
+              <div className="overflow-hidden h-48">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transform duration-500 group-hover:scale-110"
                 />
               </div>
 
